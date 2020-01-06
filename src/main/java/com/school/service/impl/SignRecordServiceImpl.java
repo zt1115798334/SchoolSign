@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+//对应的接口实现类
 public class SignRecordServiceImpl implements SignRecordService {
 
     private final SignRecordMapper signRecordMapper;

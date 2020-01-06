@@ -23,11 +23,23 @@ public class LoginController {
         this.teacherService = teacherService;
     }
 
+    /**
+     * 跳转到登录页面，
+     * @return
+     */
     @GetMapping({"/", "login"})
     public String loginPage() {
         return "login";
     }
 
+    /**
+     * 实现登录功能，如果成功重定向学生列表页面  如果失败 提示登录失败
+     * @param account
+     * @param password
+     * @param model
+     * @param session
+     * @return
+     */
     @PostMapping("login")
     public String login(@RequestParam String account, @RequestParam String password,
                         Model model,

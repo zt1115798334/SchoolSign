@@ -11,6 +11,8 @@ public interface TeacherMapper {
      * This method corresponds to the database table teacher
      *
      * @mbggenerated Fri Dec 27 23:41:01 CST 2019
+     *
+     * 根据id删除信息
      */
     int deleteByPrimaryKey(Long id);
 
@@ -19,6 +21,8 @@ public interface TeacherMapper {
      * This method corresponds to the database table teacher
      *
      * @mbggenerated Fri Dec 27 23:41:01 CST 2019
+     *
+     * 插入
      */
     int insert(Teacher record);
 
@@ -27,6 +31,8 @@ public interface TeacherMapper {
      * This method corresponds to the database table teacher
      *
      * @mbggenerated Fri Dec 27 23:41:01 CST 2019
+     *
+     * 根据id获取信息
      */
     Teacher selectByPrimaryKey(Long id);
 
@@ -35,6 +41,8 @@ public interface TeacherMapper {
      * This method corresponds to the database table teacher
      *
      * @mbggenerated Fri Dec 27 23:41:01 CST 2019
+     *
+     * 获取全部信息
      */
     List<Teacher> selectAll();
 
@@ -43,8 +51,16 @@ public interface TeacherMapper {
      * This method corresponds to the database table teacher
      *
      * @mbggenerated Fri Dec 27 23:41:01 CST 2019
+     *
+     * 根据id更新信息
      */
     int updateByPrimaryKey(Teacher record);
 
+    /**
+     * 根据账户 密码 获取信息
+     * @param account
+     * @param password
+     * @return
+     */
     Teacher findTeacher(@Param("account") String account, @Param("password") String password);
 }

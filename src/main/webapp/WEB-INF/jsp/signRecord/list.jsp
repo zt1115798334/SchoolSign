@@ -30,7 +30,7 @@
     <tr>
         <th>#</th>
         <th>签到日期</th>
-        <th>签到ip</th>
+<%--        <th>签到ip</th>--%>
         <th>签到时间</th>
     </tr>
     </thead>
@@ -39,7 +39,7 @@
         <tr>
             <th scope="row">${xh.index+1}</th>
             <td><fmt:formatDate value="${sr.date}" pattern="yyyy-MM-dd"/></td>
-            <td>${sr.ip}</td>
+<%--            <td>${sr.ip}</td>--%>
             <td><fmt:formatDate value="${sr.signTime}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
         </tr>
     </c:forEach>

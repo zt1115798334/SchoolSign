@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+//对应的接口实现类
 public class TeacherServiceImpl implements TeacherService {
 
     private final TeacherMapper teacherMapper;

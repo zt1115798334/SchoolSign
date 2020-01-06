@@ -12,6 +12,12 @@ import java.util.Map;
 @ControllerAdvice
 public class MyExceptionHandler {
 
+    /**
+     * 全局异常处理
+     * @param e
+     * @param request
+     * @return
+     */
     @ExceptionHandler(UserNotExistException.class)
     public ResponseEntity handlerException(Exception e, HttpServletRequest request) {
         Map<String, String> data = Maps.newConcurrentMap();

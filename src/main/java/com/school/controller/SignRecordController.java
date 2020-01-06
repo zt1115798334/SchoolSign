@@ -24,6 +24,12 @@ public class SignRecordController {
         this.signRecordService = signRecordService;
     }
 
+    /**
+     * 获取学生签到信息并且跳转到签到记录列表页面
+     * @param studentId
+     * @param model
+     * @return
+     */
     @GetMapping(value = "get/{studentId}")
     public String getSignRecord(@PathVariable("studentId") Long studentId, Model model) {
         List<SignRecord> studentSignRecord = signRecordService.findStudentSignRecord(studentId);
@@ -31,6 +37,11 @@ public class SignRecordController {
         return "signRecord/list";
     }
 
+    /**
+     * 跳转到签到界面
+     * @param model
+     * @return
+     */
     @GetMapping(value = "page")
     public String signRecordPage(Model model) {
         boolean code = model.containsAttribute("code");
@@ -38,6 +49,14 @@ public class SignRecordController {
         return "signRecord/sr";
     }
 
+    /**
+     * 提交签到信息 并且跳转到签到界面显示签到成功信息
+     * @param studentId
+     * @param studentName
+     * @param request
+     * @param model
+     * @return
+     */
     @PostMapping(value = "save")
     public ModelAndView signRecord(@RequestParam String studentId, @RequestParam String studentName, HttpServletRequest request, Model model) {
         String ip = getIP(request);
